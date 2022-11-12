@@ -5,6 +5,7 @@
             <img
                 src="{% static 'images/icons/fyk.png' %}"
                 alt="Logo"
+                style="width:75% ;"
             />
         </a>
     </h1>
@@ -16,8 +17,6 @@
         <a href="" class="btn btn-success">My Products</a>
         <a href="{%url 'users:logout' %}" class="btn btn-danger"> Logout </a>
         {% else %}
-     
-          
         <a href="{%url 'users:login' %}" class="btn btn-success"> Login </a>
         {% endif %} 
 
