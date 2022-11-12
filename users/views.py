@@ -35,3 +35,8 @@ def login(request):
 
         }
         return render(request, "users/login.html", context)
+
+
+def logout(request):
+    auth_logout(request)
+    return HttpResponseRedirect(reverse("web:index"))
