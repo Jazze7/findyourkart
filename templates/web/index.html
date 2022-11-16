@@ -6,69 +6,40 @@
         <section class="wrapper">
             {% include 'includes/header.html' %}
             <section class="spotlight">
-                <h3>Products</h3>
+                <h3 class="fw-bold">Products</h3>
                 <div class="all-posts">
                     <div class="post-section">
-                        <ul class="posts">
                             {% for product in products %}
-                            <li>
-                                <a href="./post.html">
-                                    <div class="blog-image">
-                                        <img
-                                            src="{{product.image.url}}"
-                                            alt="Blog"
-                                        />
-                                    </div>
-                                    <div class="details">
-                                        <div class="date">
-                                            <h4 class="name">{{product.brand}}</h4>
-    
-                                        <h3 class="head">
-                                            {{product.title}}
-                                        </h3>
-                                        
-                                        <p class="description">
-                                       {{product.description}}
-                                        </p>
-                                    </div>
-                                </a>
-                                <div class="bottom">
-                                    {% for tag in product.categories.all %}
-                                
-                                    <a href="#" class="design one"> {{tag.title}} </a>
-                                {%  endfor %}
+                            <div class="card" style="width: 21.5rem; margin-bottom: 15px;">
+                                <img src="{{product.image.url}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                  <h6 class="card-title">{{product.brand}}</h6>
+                                  <h5 class="card-title fw-bold">{{product.title}}</h5>
+                                  <p class="card-text">{{product.description}}</p>
+                                  {% for tag in product.categories.all %}
+                                  <a href="#" class="btn btn-dark">{{tag.title}} </a>
+                                  {%  endfor %}
                                 </div>
-                            </li>             
-                         {% endfor %}
-                        </ul>
-                        <div class="pagination">
-                            <div class="prev disabled">
-                                <span class="arrow">
-                                    <img
-                                        src="{% static 'images/icons/arrow.svg' %}"
-                                        alt="Arrow"
-                                    />
-                                </span>
-                                Previous
-                            </div>
-                            <div class="pages">
-                                <span class="active"> 1 </span>
-                                <a href="#"> 2 </a>
-                                <a href="#"> 3 </a>
-                            </div>
-                            <a href="#" class="next">
-                                Next
-                                <span class="arrow">
-                                    <img
-                                        src="{% static 'images/icons/arrow.svg' %}"
-                                        alt="Arrow"
-                                    />
-                                </span>
-                            </a>
-        
-                        </div>
-    
-
+                              </div>
+                             {% endfor %}
+                            
+                                <ul class="pagination" style="width:100%;padding-left:500px;">
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                
+                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
                     </div>
                     <div class="filter-section" id="hamburger-menu">
                         <form action="">
@@ -130,7 +101,7 @@
                             <div class="filter">
                             {% for brand in brands %}
                                 <label class="checkbox">
-                                    <input type="checkbox" name="author" value="{{brand.id}}" />
+                                    <input type="checkbox" name="brand" value="{{brand.id}}" />
                                     <span class="label">{{brand.name}}</span>
                                 </label>
                                 {% endfor %}

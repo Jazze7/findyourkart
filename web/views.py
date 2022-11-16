@@ -11,12 +11,13 @@ def index(request):
     brands = Brand.objects.all()
 
     search_brand = request.GET.getlist("brand")
+    print(search_brand)
     if search_brand:
-        products = Product.objects.filter(author__in=search_brand)
+        Products = Product.objects.filter(brand__in=search_brand)
 
     search_categories = request.GET.getlist("category")
     if search_categories:
-        products = Product.objects.filter(
+        Products = Product.objects.filter(
             categories__in=search_categories).distinct()
     context = {
         "title": "Find Your Kart",

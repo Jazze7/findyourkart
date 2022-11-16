@@ -169,8 +169,6 @@ header div#hamburger-icon {
     margin-bottom: 20px;
 }
 #home section.spotlight div.all-posts ul.posts li div.details div.date {
-    display: flex;
-    align-items: center;
     margin-bottom: 4%;
 }
 #home section.spotlight div.all-posts ul.posts li div.details div.date h4.name {
@@ -510,7 +508,7 @@ header div#hamburger-icon {
     cursor: pointer;
 }
 div.pagination {
-    width: 100%;
+    width: 100% ;
     display: flex;
     justify-content: space-between;
     align-items: center;
