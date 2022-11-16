@@ -10,7 +10,9 @@
                 <div class="all-posts">
                     <div class="post-section">
                             {% for product in products %}
+                            <a style="color:#000; text-decoration:none;"href="{% url 'web:product' id=product.id %}">
                             <div class="card" style="width: 21.5rem; margin-bottom: 15px;">
+                               
                                 <img src="{{product.image.url}}" class="card-img-top" alt="...">
                                 <div class="card-body">
                                   <h6 class="card-title">{{product.brand}}</h6>
@@ -21,6 +23,7 @@
                                   {%  endfor %}
                                 </div>
                               </div>
+                            </a>
                              {% endfor %}
                             
                                 <ul class="pagination" style="width:100%;padding-left:500px;">

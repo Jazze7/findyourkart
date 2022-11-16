@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from products.models import Product, Category, Brand
 
 # Create your views here.
@@ -26,3 +26,12 @@ def index(request):
         "brands": brands
     }
     return render(request, "web/index.html", context=context)
+
+
+def product(request, id):
+    instances = get_object_or_404(Product.objects.filter(id=id))
+    context = {
+        "instances": instances,
+        "title": "Product"
+    }
+    return render(request, "web/products.html", context=context)
