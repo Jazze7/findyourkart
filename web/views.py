@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+
 from products.models import Product, Category, Brand
 
 # Create your views here.
@@ -7,7 +8,7 @@ from products.models import Product, Category, Brand
 def index(request):
     Products = Product.objects.filter(is_deleted=False)
 
-    categories = Category.objects.all()
+    categories = Category.objects.all()[:5]
     brands = Brand.objects.all()
 
     search_brand = request.GET.getlist("brand")

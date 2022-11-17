@@ -2,11 +2,7 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import render, reverse
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.contrib.auth.models import User
-# from posts.models import Author
 
-
-# from users.forms import UserForm
-# from main.functions import generate_form_errors
 
 # Create your views here.
 
