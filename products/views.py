@@ -72,7 +72,7 @@ def my_products(request):
 def delete_product(request, id):
     instance = get_object_or_404(Product, id=id)
     instance.is_deleted = True
-    instance.save()
+    instance.delete()
 
     response_data = {
         "title": "successfully deleted",

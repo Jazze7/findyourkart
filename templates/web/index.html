@@ -19,30 +19,12 @@
                                   <h5 class="card-title fw-bold">{{product.title}}</h5>
                                   <p class="card-text">{{product.description}}</p>
                                   {% for tag in product.categories.all %}
-                                  <a href="#" class="btn btn-dark">{{tag.title}} </a>
+                                  <a href="#" class="btn btn-secondary">{{tag.title}} </a>
                                   {%  endfor %}
                                 </div>
                               </div>
                             </a>
                              {% endfor %}
-                            
-                                <ul class="pagination" style="width:100%;padding-left:500px;">
-                                  <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                      <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                  </li>
-                                
-                                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        
-                                  <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                      <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                  </li>
-                                </ul>
                     </div>
                     <div class="filter-section" id="hamburger-menu">
                         <form action="">
@@ -66,7 +48,7 @@
                                 </label>
                                 {% endfor %}
                             </div>
-                            <button type="submit" value="Filter" class="btn btn-success" style="width:100% ;" >Filter</button>
+                            <button type="submit" value="Filter" class="btn btn-dark" style="width:100% ;" >Filter</button>
                         </form>
                     </div>
                 </div>
